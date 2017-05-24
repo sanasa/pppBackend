@@ -8,7 +8,7 @@ app.get("/", function (req, res) {
 })
 
 app.post("/travishook", function (req, res) {
-    console.dir(req.body);
+    console.log(req.body);
     res.send(ok);
 
 })
