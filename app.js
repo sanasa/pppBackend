@@ -14,9 +14,10 @@ app.get("/", function (req, res) {
 })
 
 app.post("/travishook", function (req, res) {
-   // console.log(req.body);
-    var a=req;
-    res.send(a);
+   console.log(req.body.status_message);
+    console.dir(req.body.status_message);
+    //var a=req;
+    res.send(ok);
 
 })
 
