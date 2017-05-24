@@ -27,7 +27,7 @@ app.post("/travishook", function (req, res) {
     //console.log(req.body.payload.status_message);
 //         console.log(dateCommit);
 //    console.log(user);
-});
+})
 
 
 app.get("/travishook", function (req, res) {
@@ -38,7 +38,7 @@ app.get("/travishook", function (req, res) {
     var jsonTosend = JSON.parse(jsonVersFrontend);
     return res.status(201).send(jsonTosend);
 
-});
+})
 // var repoName = req.body.repository.name;
 
 app.listen(port);
