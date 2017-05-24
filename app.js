@@ -18,23 +18,22 @@ var jsonVersFrontend;
 
 app.post("/travishook", function (req, res) {
   
-  // var buildstatus =req.body.status_message;
-  // var dateCommit=req.body.committed_at;
-  // var user=req.body.committer_name;
-  // var repoName=req.body.repository.name;
- var name=req.body.name;
+  var buildstatus =req.body.status_message;
+  var dateCommit=req.body.committed_at;
+  var user=req.body.committer_name;
+  var repoName=req.body.repository.name;
 
-   //jsonVersFrontend="{ \"buildstatus\": \""+buildstatus+"\",\"dateCommit\": \""+dateCommit+"\",\"user\": \""+user+"\",\"repoName\": \""+repoName+"\"}";
-jsonVersFrontend="{\"name\": \""+name+"\"}";
+  jsonVersFrontend="{ \"buildstatus\": \""+buildstatus+"\",\"dateCommit\": \""+dateCommit+"\",\"user\": \""+user+"\",\"repoName\": \""+repoName+"\"}";
 })
 
 
 app.get("/travishook", function (req, res) {
 
-//  var jsonTosend=JSON.parse(jsonVersFrontend);
-//     res.send(jsonTosend);
+
 res.setHeader('Access-Control-Allow-Origin','*');
-     return res.status(201).send(JSON.parse("{\"name\": \"sana\"}"));
+
+ var jsonTosend=JSON.parse(jsonVersFrontend);
+     return res.status(201).send(jsonTosend);
 
 })
 
