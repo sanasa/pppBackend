@@ -2,10 +2,10 @@ var port=process.env.PORT;
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();  
-var router = express.Router();
+//var router = express.Router();
 
-router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //app.use(express.bodyParser());
 
@@ -14,7 +14,7 @@ app.get("/", function (req, res) {
 })
 
 app.post("/travishook", function (req, res) {
-    console.log(req.body);
+   // console.log(req.body);
     var a=req.body.status_message;
     res.send(a);
 
