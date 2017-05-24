@@ -31,8 +31,9 @@ jsonVersFrontend="{\"name\": \""+name+"\"}";
 
 app.get("/travishook", function (req, res) {
 
- var jsonTosend=JSON.parse(jsonVersFrontend);
-    res.send(jsonTosend);
+//  var jsonTosend=JSON.parse(jsonVersFrontend);
+//     res.send(jsonTosend);
+res.send(JSON.parse("{\"name\": \"sana\"}"));
 
 })
 
