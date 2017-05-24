@@ -12,15 +12,23 @@ app.use(bodyParser.json());
 app.get("/", function (req, res) {
  res.send("ok");
 })
-
+var jsonVersFrontend;
 app.post("/travishook", function (req, res) {
-   //console.log(req.method);
-   // console.dir(req.method);
-    //var a=req;heroku
-  res.send(req.body.status_message);
+  
+  var buildstatus =req.body.status_message;
+  var dateCommit=req.body.committed_at;
+  var user=req.body.committer_name;
+  var repoName=req.body.repository.name;
+ 
+   jsonVersFrontend="{ \"buildstatus\": \""+buildstatus+"\",\"dateCommit\": \""+dateCommit+"\",\"user\": \""+user+"\",\"repoName\": \""+repoName+"\"}";
 
 })
+app.get("/travishook", function (req, res) {
 
+ var jsonTosend=JSON.parse(jsonVersFrontend);
+    res.send(jsonTosend);
+
+})
 
 app.listen(port);
 
