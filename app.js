@@ -17,12 +17,13 @@ var jsonVersFrontend;
 
 app.post("/travishook", function (req, res) {
 
-    var buildstatus = req.body.status_message;
-    var dateCommit = req.body.committed_at;
-    var user = req.body.committer_name;
-    // var repoName = req.body.repository.name;
-    console.log("hook is hereeeee !!!! ");
-    jsonVersFrontend = "{ \"buildstatus\": \"" + buildstatus + "\",\"dateCommit\": \"" + dateCommit + "\",\"user\": \"" + user + "\",\"repoName\": \"}";
+    console.log(req.body);
+
+    // var buildstatus = req.body.status_message;
+    // var dateCommit = req.body.committed_at;
+    // var user = req.body.committer_name;
+    // // var repoName = req.body.repository.name;
+    // jsonVersFrontend = "{ \"buildstatus\": \"" + buildstatus + "\",\"dateCommit\": \"" + dateCommit + "\",\"user\": \"" + user + "\",\"repoName\": \"}";
 })
 
 
@@ -35,6 +36,7 @@ app.get("/travishook", function (req, res) {
     return res.status(201).send(jsonTosend);
 
 })
+    // var repoName = req.body.repository.name;
 
 app.listen(port);
 
