@@ -5,13 +5,13 @@ var app = express();
 
 app.use(bodyParser.urlencoded({
     extended: true
-}))
+}));
 
 app.get("/", function (req, res) {
     res.send("ok");
-})
+});
 
-String jsonVersFrontend;
+var jsonVersFrontend="";
 
 app.post("/travishook", function (req, res) {
     var buildstatus = req.body.status_message;
