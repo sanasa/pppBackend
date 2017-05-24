@@ -21,8 +21,8 @@ app.post("/travishook", function (req, res) {
     var buildstatus = req.body.payload.status_message;
     var dateCommit = req.body.payload.committed_at;
     var user = req.body.payload.author_name;
-    var repoName = req.body.payload.repository.name;
-    jsonVersFrontend = "{ \"buildstatus\": \"" + buildstatus + "\",\"dateCommit\": \"" + dateCommit + "\",\"user\": \"" + user + "\",\"repoName\": \"" + repoName + "\"}";
+    
+    jsonVersFrontend = "{ \"buildstatus\": \"" + buildstatus + "\",\"dateCommit\": \"" + dateCommit + "\",\"user\": \"" + user + "\"}";
     console.log('hook is hereeee');
 });
 
