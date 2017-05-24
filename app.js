@@ -11,7 +11,7 @@ app.get("/", function (req, res) {
     res.send("ok");
 });
 
-var jsonVersFrontend="";
+var jsonVersFrontend;
 
 app.post("/travishook", function (req, res) {
     var buildstatus = req.body.payload.status_message;
