@@ -14,10 +14,11 @@ app.get("/", function (req, res) {
 var jsonVersFrontend;
 
 app.post("/travishook", function (req, res) {
+        console.log("hook is here");
+
     var buildstatus = req.body.payload.status_message;
     var dateCommit = req.body.payload.committed_at;
     var user = req.body.payload.author_name;
-    console.log("hook is here");
     jsonVersFrontend = '{"buildstatus": "' + buildstatus + '","dateCommit": "' + dateCommit + '","user": "' + user + '"}';
 })
 
