@@ -5,7 +5,7 @@ var app = express();
 
 app.use(bodyParser.urlencoded({
     extended: true,
-    type: application/x-www-form-urlencoded
+    type: x-www-form-urlencoded
 }));
 
 
