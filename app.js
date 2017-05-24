@@ -17,7 +17,7 @@ var jsonVersFrontend;
 
 app.post("/travishook", function (req, res) {
 
-  console.log("req.body : "+req);
+  console.log("req.body : "+req.body.status_message);
     // var buildstatus = req.body.status_message;
     // var dateCommit = req.body.committed_at;
     // var user = req.body.author_name;
