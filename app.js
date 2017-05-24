@@ -15,13 +15,14 @@ app.get("/", function (req, res) {
 var jsonVersFrontend;
 app.post("/travishook", function (req, res) {
   
-  var buildstatus =req.body.status_message;
-  var dateCommit=req.body.committed_at;
-  var user=req.body.committer_name;
-  var repoName=req.body.repository.name;
- 
-   jsonVersFrontend="{ \"buildstatus\": \""+buildstatus+"\",\"dateCommit\": \""+dateCommit+"\",\"user\": \""+user+"\",\"repoName\": \""+repoName+"\"}";
+  // var buildstatus =req.body.status_message;
+  // var dateCommit=req.body.committed_at;
+  // var user=req.body.committer_name;
+  // var repoName=req.body.repository.name;
+ var name=req.body.name;
 
+   //jsonVersFrontend="{ \"buildstatus\": \""+buildstatus+"\",\"dateCommit\": \""+dateCommit+"\",\"user\": \""+user+"\",\"repoName\": \""+repoName+"\"}";
+jsonVersFrontend="{\"name\": \""+name+"\"}";
 })
 app.get("/travishook", function (req, res) {
 
