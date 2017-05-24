@@ -14,10 +14,10 @@ app.get("/", function (req, res) {
 })
 
 app.post("/travishook", function (req, res) {
-   console.log(req.method);
-    console.dir(req.method);
+   //console.log(req.method);
+   // console.dir(req.method);
     //var a=req;heroku
- //   res.send(ok);
+  res.send(req.method);
 
 })
 
