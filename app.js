@@ -11,13 +11,15 @@ app.get("/", function (req, res) {
     res.send("ok");
 });
 
-var jsonVersFrontend="";
+var jsonVersFrontend;
 
 app.post("/travishook", function (req, res) {
     var buildstatus = req.body.status_message;
     var dateCommit = req.body.committed_at;
     var user = req.body.author_name;
-    jsonVersFrontend = "{'buildstatus': " + buildstatus + ",'dateCommit': " + dateCommit + ",'user': " + user + "}";
+    jsonVersFrontend = "{'buildstatus': '" + buildstatus + "',"+
+    "'dateCommit': '" + dateCommit + "',"+
+    "'user': '" + user + "'}";
 })
 
 
