@@ -5,28 +5,28 @@ var app = express();
 
 app.use(bodyParser.urlencoded({
     extended: true
-}));
+})
 
 
 app.get("/", function (req, res) {
     res.send("ok");
-});
+})
 var jsonVersFrontend;
 
 
 
 app.post("/travishook", function (req, res) {
 
-    console.log(req.body.payload);
-    var buildstatus = req.body.status_message;
-    var dateCommit = req.body.committed_at;
-    var user = req.body.author_name;
+    console.log("req.body.payload : "+req.body.payload);
+    // var buildstatus = req.body.payload.status_message;
+    // var dateCommit = req.body.committed_at;
+    // var user = req.body.author_name;
     
-    jsonVersFrontend = "{ \"buildstatus\": \"" + buildstatus + "\",\"dateCommit\": \"" + dateCommit + "\",\"user\": \"" + user + "\"}";
-    console.log('hook is hereeee');
-    console.log(buildstatus);
-        console.log(dateCommit);
-   console.log(user);
+    // jsonVersFrontend = "{ \"buildstatus\": \"" + buildstatus + "\",\"dateCommit\": \"" + dateCommit + "\",\"user\": \"" + user + "\"}";
+    //console.log('hook is hereeee');
+    console.log(req.body.payload.status_message);
+//         console.log(dateCommit);
+//    console.log(user);
 });
 
 
