@@ -24,6 +24,9 @@ app.post("/travishook", function (req, res) {
     
     jsonVersFrontend = "{ \"buildstatus\": \"" + buildstatus + "\",\"dateCommit\": \"" + dateCommit + "\",\"user\": \"" + user + "\"}";
     console.log('hook is hereeee');
+    console.log(buildstatus);
+        console.log(dateCommit);
+
 });
 
 
