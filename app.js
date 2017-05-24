@@ -13,6 +13,9 @@ app.get("/", function (req, res) {
  res.send("ok");
 })
 var jsonVersFrontend;
+
+
+
 app.post("/travishook", function (req, res) {
   
   // var buildstatus =req.body.status_message;
@@ -24,6 +27,8 @@ app.post("/travishook", function (req, res) {
    //jsonVersFrontend="{ \"buildstatus\": \""+buildstatus+"\",\"dateCommit\": \""+dateCommit+"\",\"user\": \""+user+"\",\"repoName\": \""+repoName+"\"}";
 jsonVersFrontend="{\"name\": \""+name+"\"}";
 })
+
+
 app.get("/travishook", function (req, res) {
 
  var jsonTosend=JSON.parse(jsonVersFrontend);
