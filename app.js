@@ -26,7 +26,7 @@ app.post("/travishook", function (req, res) {
     console.log('hook is hereeee');
     console.log(buildstatus);
         console.log(dateCommit);
-
+   console.log(user);
 });
 
 
