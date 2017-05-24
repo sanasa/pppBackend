@@ -17,10 +17,10 @@ var jsonVersFrontend;
 
 app.post("/travishook", function (req, res) {
 
-    console.log("req.body.payload : "+req.body.payload);
-    var buildstatus = req.body.payload.status_message;
-    var dateCommit = req.body.payload.committed_at;
-    var user = req.body.payload.author_name;
+    console.log("req.body.payload : "+req.body);
+    var buildstatus = req.body.status_message;
+    var dateCommit = req.body.committed_at;
+    var user = req.body.author_name;
     
     jsonVersFrontend = "{ \"buildstatus\": \"" + buildstatus + "\",\"dateCommit\": \"" + dateCommit + "\",\"user\": \"" + user + "\"}";
     //console.log('hook is hereeee');
