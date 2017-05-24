@@ -7,8 +7,8 @@ app.get("/", function (req, res) {
     res.send('hello');
 })
 
-app.get("/travishook", function (req, res) {
-    res.send("api woks");
+app.post("/travishook", function (req, res) {
+    res.send(req.body);
 
 })
 
