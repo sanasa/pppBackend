@@ -8,7 +8,7 @@ app.get("/", function (req, res) {
 })
 
 app.post("/travishook", function (req, res) {
-    res.send("gee");
+    res.send(req.body.port);
 
 })
 
