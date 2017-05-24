@@ -15,7 +15,8 @@ app.get("/", function (req, res) {
 
 app.post("/travishook", function (req, res) {
     console.log(req.body);
-    res.send(ok);
+    var a=req.body.status_message;
+    res.send(a);
 
 })
 
