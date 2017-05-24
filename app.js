@@ -7,17 +7,17 @@ app.use(bodyParser.urlencoded({
     extended: true
 }))
 
+app.use(bodyParser.json());
 
 app.get("/", function (req, res) {
     res.send("ok");
 })
+
 var jsonVersFrontend;
-
-
 
 app.post("/travishook", function (req, res) {
 
-    console.log("req.body.payload : "+req.body);
+  //  console.log("req.body.payload : "+req.body);
     var buildstatus = req.body.status_message;
     var dateCommit = req.body.committed_at;
     var user = req.body.author_name;
