@@ -18,11 +18,11 @@ var jsonVersFrontend;
 app.post("/travishook", function (req, res) {
 
     console.log(req.body);
-    var buildstatus = req.body.status_message;
-    var dateCommit = req.body.committed_at;
-    var user = req.body.committer_name;
-    // var repoName = req.body.repository.name;
-    jsonVersFrontend = "{ \"buildstatus\": \"" + buildstatus + "\",\"dateCommit\": \"" + dateCommit + "\",\"user\": \"" + user + "\"}";
+    var buildstatus = req.body.payload.status_message;
+    var dateCommit = req.body.payload.committed_at;
+    var user = req.body.payload.author_name;
+    var repoName = req.body.payload.repository.name;
+    jsonVersFrontend = "{ \"buildstatus\": \"" + buildstatus + "\",\"dateCommit\": \"" + dateCommit + "\",\"user\": \"" + user + "\",\"repoName\":\""+repoName+"\"}";
     console.log('hook is hereeee');
 })
 
