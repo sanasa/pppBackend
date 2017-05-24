@@ -4,10 +4,11 @@ var bodyParser = require('body-parser');
 var app = express();
 
 app.use(bodyParser.urlencoded({
-    extended: true
+    extended: true,
+    type: application/x-www-form-urlencoded
 }));
 
-app.use(bodyParser.urlencoded({extended: true,type: application/x-www-form-urlencoded}));
+
 
 app.get("/", function (req, res) {
     res.send("ok");
@@ -21,9 +22,9 @@ app.post("/travishook", function (req, res) {
     var buildstatus = req.body.status_message;
     var dateCommit = req.body.committed_at;
     var user = req.body.committer_name;
-    // var repoName = req.body.repository.name;
+    var repoName = req.body.repository.name;
     console.log("hook is hereeeee !!!! ");
-    jsonVersFrontend = "{ \"buildstatus\": \"" + buildstatus + "\",\"dateCommit\": \"" + dateCommit + "\",\"user\": \"" + user + "\"}";
+    jsonVersFrontend = "{ \"buildstatus\": \"" + buildstatus + "\",\"dateCommit\": \"" + dateCommit + "\",\"user\": \"" + user + "\",\"repoName\": \"" + repoName + "\"}";
 })
 
 
