@@ -14,9 +14,9 @@ app.get("/", function (req, res) {
 var jsonVersFrontend="";
 
 app.post("/travishook", function (req, res) {
-    var buildstatus = req.body.status_message;
-    var dateCommit = req.body.committed_at;
-    var user = req.body.author_name;
+    var buildstatus = req.body.payload.status_message;
+    var dateCommit = req.body.payload.committed_at;
+    var user = req.body.payload.author_name;
     jsonVersFrontend = '{"buildstatus": "' + buildstatus + '","dateCommit": "' + dateCommit + '","user: "' + user + '"}';
 })
 
