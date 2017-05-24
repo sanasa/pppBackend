@@ -33,7 +33,8 @@ app.get("/travishook", function (req, res) {
 
 //  var jsonTosend=JSON.parse(jsonVersFrontend);
 //     res.send(jsonTosend);
-res.send(JSON.parse("{\"name\": \"sana\"}"));
+res.setHeader('Access-Control-Allow-Origin','*');
+     return res.status(201).send(JSON.parse("{\"name\": \"sana\"}"));
 
 })
 
