@@ -5,7 +5,7 @@ var app = express();
 
 app.use(bodyParser.urlencoded({
     extended: true
-})
+}))
 
 
 app.get("/", function (req, res) {
